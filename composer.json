@@ -38,6 +38,7 @@
     },
     "scripts": {
         "post-install-cmd": [
+            "php /app/fuel/packages/oil r install"
         ]
     },
     "minimum-stability": "stable"
