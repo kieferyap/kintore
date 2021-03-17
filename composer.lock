@@ -226,6 +226,38 @@
             "time": "2016-10-04T15:21:48+00:00"
         },
         {
+            "name": "fuel/oil",
+            "version": "1.8.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/fuel/oil.git",
+                "reference": "84ea18b9e39c3c0d31681dd2cf92fbf81b6ed90f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/fuel/oil/zipball/84ea18b9e39c3c0d31681dd2cf92fbf81b6ed90f",
+                "reference": "84ea18b9e39c3c0d31681dd2cf92fbf81b6ed90f",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "fuel-package",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "FuelPHP Development Team",
+                    "email": "team@fuelphp.com"
+                }
+            ],
+            "description": "FuelPHP 1.x Oil Package",
+            "homepage": "https://github.com/fuel/oil",
+            "time": "2016-10-05T13:32:41+00:00"
+        },
+        {
             "name": "fuel/orm",
             "version": "1.8.0.1",
             "source": {
