@@ -1,0 +1,67 @@
+.navbar-purple {
+	background-color: #532c66;
+}
+
+.kintore-navbar {
+	color: #fff !important;
+}
+
+.kintore-navbar:hover {
+	color: #e3a8ff !important;
+}
+
+.kintore-content {
+	margin-top: 60px;
+}
+
+.btn-kintore {
+	background-color: #532c66;
+	color: white;
+}
+
+.btn-kintore:hover {
+	background-color: #77478f;
+	color: white;
+}
+
+.btn-kintore:focus, .btn-kintore:active {
+	background-color: #9865b0 !important;
+	color: white !important;
+}
+
+.new-entry {
+	border: 1px solid #d5a8ea;
+	border-radius: 10px;
+	padding: 10px;
+}
+
+.input-div {
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+hr {
+	border-top: 1px solid #aaa;
+}
+
+.border-bottom {
+	border-bottom: 1px solid #ccc;
+}
+
+.btn-primary {
+	background-color: #77478f;
+	color: white;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+	background-color: #9865b0 !important;
+	color: white !important;
+}
+
+.margin-top {
+	margin-top: 10px;
+}
+
+.exercise-input-div {
+    height: 45px;
+}
