@@ -22,9 +22,9 @@
 return array(
 	'default' => array(
 		'connection' => array(
-			'dsn'      => 'mysql:host=localhost;dbname=kintore',
-			'username' => 'root',
-			'password' => '',
+			'dsn'      => 'pgsql:host=ec2-52-70-67-123.compute-1.amazonaws.com;dbname=d9gjtsjevv0j2r',
+			'username' => 'syqovxrbfyqbmq',
+			'password' => '9ac5ce8e4f97b2e74ecfbb44daa3858e57b17d75e62997715fa55c562d345c64',
 		),
 	),
 );
