@@ -22,9 +22,9 @@
 return array(
 	'default' => array(
 		'connection' => array(
-			'dsn'      => 'pgsql:host=ec2-52-70-67-123.compute-1.amazonaws.com;dbname=d9gjtsjevv0j2r',
-			'username' => 'syqovxrbfyqbmq',
-			'password' => '9ac5ce8e4f97b2e74ecfbb44daa3858e57b17d75e62997715fa55c562d345c64',
+			'dsn'      => 'mysql:host=xlf3ljx3beaucz9x.cbetxkdyhwsb.us-east-1.rds.amazonaws.com;dbname=oqfc8l6m7ajmxe5m',
+			'username' => 'feilq4f9w8x8ymk0',
+			'password' => 'lk2335939nt43sgn',
 		),
 	),
 );
