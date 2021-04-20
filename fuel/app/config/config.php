@@ -180,7 +180,7 @@ return array(
 	 *  Change the server's default timezone. This is optional.
 	 */
 
-	// 'default_timezone' => null,
+	'default_timezone' => 'Asia/Tokyo',
 
 	/**
 	 * -------------------------------------------------------------------------
@@ -228,7 +228,7 @@ return array(
 		 * ---------------------------------------------------------------------
 		 */
 
-		// 'token_salt' => 'put your salt value here to make the token more secure',
+		'token_salt' => getenv('SALT'),
 
 		/**
 		 * ---------------------------------------------------------------------
@@ -453,6 +453,8 @@ return array(
 			'orm',
 		),
 	),
+
+	'iterations' => 10000,
 
 	// 'always_load' => array(
 		/**

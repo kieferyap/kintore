@@ -1,17 +1,46 @@
+.background-image {
+	background-image: url('https://static1.e621.net/data/89/6c/896c20da288d8a52c705ba0f920bb4f3.jpg');
+	background-color: #FFF;
+    height: 400px;
+    width: 400px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: fixed;
+    right: 0px;
+    bottom: -15px;
+    z-index: -1;
+}
+
+.kintore-content {
+	background-color: rgba(255, 255, 255, 0.7);
+	border-radius: 0px 0px 10px 10px;
+	padding: 20px;
+	margin-top: 50px;
+}
+
+.border-red {
+	border: 2px solid red;
+}
+
+.border-blue {
+	border: 2px solid blue;
+}
+
 .navbar-purple {
 	background-color: #532c66;
 }
 
-.kintore-navbar {
-	color: #fff !important;
+.navbar-inverse .navbar-right > li > a {
+	color: #cc95e6;
 }
 
-.kintore-navbar:hover {
-	color: #e3a8ff !important;
+.navbar-inverse .navbar-brand{
+	color: #fff;
 }
 
-.kintore-content {
-	margin-top: 60px;
+.navbar-inverse .navbar-brand:hover {
+	color: #e3a8ff;
 }
 
 .btn-kintore {
@@ -64,4 +93,62 @@ hr {
 
 .exercise-input-div {
     height: 45px;
+}
+
+.table .cell-center {
+	text-align: center;
+}
+
+#btn-post-submit {
+	float: right;
+}
+
+.cursor-pointer {
+	cursor: pointer;
+}
+
+.hover-gray:hover {
+	background-color: #F5F5F5;
+}
+
+.flash-icon {
+	background-color: black;
+	color: white;
+    float: left;
+    margin-left: -15px;
+    margin-top: -15px;
+    margin-bottom: -15px;
+    height: 50px;
+    width: 30px;
+    padding-top: 15px;
+    padding-left: 8px;
+}
+
+.flash-success-icon {
+	background-color: #67c569;
+	cursor: pointer;
+}
+.flash-danger-icon {
+	background-color: #882f2e;
+	cursor: pointer;
+}
+
+.flash-message {
+	padding-left: 10px;
+}
+
+.alert-success {
+	border: 2px solid #67c569;
+	background-color: #e9ffe9;
+	margin-left: 20px;
+}
+
+.alert-danger {
+	border: 2px solid #882f2e;
+	background-color: #f7ecec;
+	margin-left: 20px;
+}
+
+.table-hover > tbody > tr:hover {
+  background-color: rgba(213, 195, 222, 0.2);
 }

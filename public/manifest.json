@@ -1,0 +1,17 @@
+{
+    "lang": "ja-JP",
+    "name": "Let's 筋トレ",
+    "short_name": "Let's 筋トレ",
+    "description": "筋トレの日記アプリ",
+    "start_url": "/",
+    "background_color": "#532c66",
+    "theme_color": "#532c66",        
+    "orientation": "any",
+    "display": "standalone",
+    "icons": [
+        {
+            "src": "/icon512.png",
+            "sizes": "512x512"
+        }
+    ]
+}

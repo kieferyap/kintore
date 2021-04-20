@@ -10,43 +10,17 @@
  */
 class Controller_Entries extends Controller_Template
 {
-	private function display_index() {
-		// Select distinct dates
-		// Query entries for that date
-		$entry_query = Model_Entry::find('all', 
-			array('order_by' => array('date' => 'desc')));
-		$exercise_query = Model_Exercise::find('all');
-		
-		$exercises = array();
-		$entries = array();
-
-		foreach($exercise_query as $exercise) {
-			$exercises[$exercise->id] = array(
-				'name'=>$exercise->name,
-				'unit'=>$exercise->unit);
+	private function display_index($view=null) {
+		// If not logged in, redirect to login page.
+		if(!Session::get('user_id')) {
+			return Response::redirect('auth/login');
 		}
 
-		foreach($entry_query as $entry) {
-			$date_format = date("Y年m月d日", strtotime($entry->date)); 
-			if (!array_key_exists($date_format, $entries)) {
-				$entries[$date_format] = array();
-			}
-
-			array_push($entries[$date_format], array(
-				'id'=>$entry->id,
-				'exercise_name'=>$exercises[$entry->exercise_id]['name'],
-				'calculation'=>$entry->weight.$exercises[$entry->exercise_id]['unit'].'x'.$entry->frequency.'回',
-				'total'=>$entry->total.$exercises[$entry->exercise_id]['unit']
-				)); 
-				
+		if(!$view) {
+			$view = Presenter::forge('entries/index');
 		}
-
-		$data = array(
-				'entries'=>$entries,
-				'exercises'=>$exercises
-			);
 		$this->template->title = "Let's 筋トレ!";
-		$this->template->content = View::forge('entries/index', $data);
+		$this->template->content = Response::forge($view);
 	}
 
 	/**
@@ -68,38 +42,83 @@ class Controller_Entries extends Controller_Template
 	 */
 	public function action_add()
 	{
-		$weight = Input::post('weight');
-		$frequency = Input::post('frequency');
+		if(Input::post('weight')) {
+			$weight = Input::post('weight');
+			$frequency = Input::post('frequency');
 
-		if (!(is_numeric($weight) && is_numeric($frequency))) {
-			Session::set_flash('error', '数字を入力してください。');
+			if (!(is_numeric($weight) && is_numeric($frequency))) {
+				Session::set_flash('error', '数字を入力してください。');
+				$this->display_index();
+				return;
+			}
+
+			$total = $weight*$frequency;
+
+			$entry = new Model_Entry();
+			$entry->exercise_id = Input::post('exercise');
+			$entry->date = date("Y-m-d");
+			$entry->weight = $weight;
+			$entry->frequency = $frequency;
+			$entry->total = $total;
+			$entry->notes = Input::post('notes');
+			$entry->user_id = Session::get('user_id');
+			$entry->save();
+			
+			Session::set_flash('success', '記入は完成しました。');
+			$this->display_index();
+			return;
+		}
+		else {
+			$this->display_index();
+			return;
+		}
+	}
+
+	public function action_delete() {
+		$id = Input::post('id');
+		if(!$id) {
+			die(json_encode(array('is_success' => false, 'message' => 'No ID given.')));
+		}
+
+		$entry = Model_Entry::find($id);
+		if(!$entry) {
+			die(json_encode(array('is_success' => false, 'message' => 'ID does not exist.')));
+		}
+		$entry->delete();
+		die(json_encode(array('is_success' => true)));
+	}
+
+	public function action_view($id=null) {
+		if(!$id) {
 			$this->display_index();
 			return;
 		}
 
-		$total = $weight*$frequency;
-
-		$entry = new Model_Entry();
-		$entry->exercise_id = Input::post('exercise');
-		$entry->date = date("Y-m-d");
-		$entry->weight = $weight;
-		$entry->frequency = $frequency;
-		$entry->total = $total;
-		$entry->save();
-
-		Session::set_flash('success', '記入は完成しました。');
-		$this->display_index();
+		$view = Presenter::forge('entries/index', 'view_exercise');
+		$view->set('exercise_id', $id);
+		$this->display_index($view);
+		return;
 	}
 
-	public function action_delete($id) {
-		$entry = Model_Entry::find($id);
-		if(!$entry) {
-			Response::redirect('/');
-		}
-		$entry->delete();
+	public function action_exercise() {
+		$name = Input::post('name');
 
-		Session::set_flash('success', '削除は完成しました。');
+		if($name) {
+			$unit = Input::post('unit');
+
+			if($unit == '') {
+				$unit = '回';
+			}
+
+			$exercise = new Model_Exercise();
+			$exercise->name = $name;
+			$exercise->unit = $unit;
+			$exercise->user_id = Session::get('user_id');
+			$exercise->save();
+
+			Session::set_flash('success', '記入は完成しました。');
+		} 
 		$this->display_index();
+		return;
 	}
-
 }

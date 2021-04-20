@@ -20,11 +20,14 @@
  */
 
 return array(
-	'default' => array(
-		'connection' => array(
-			'dsn'      => 'mysql:host=xlf3ljx3beaucz9x.cbetxkdyhwsb.us-east-1.rds.amazonaws.com;dbname=oqfc8l6m7ajmxe5m',
-			'username' => 'feilq4f9w8x8ymk0',
-			'password' => 'lk2335939nt43sgn',
-		),
-	),
+	// 'default' => array(
+	// 	'connection' => array(
+			// 'dsn'      => 'mysql:host=xlf3ljx3beaucz9x.cbetxkdyhwsb.us-east-1.rds.amazonaws.com;dbname=oqfc8l6m7ajmxe5m',
+			// 'username' => 'feilq4f9w8x8ymk0',
+			// 'password' => 'lk2335939nt43sgn',
+			// 'dsn'      => 'mysql:host=localhost;dbname=kintore',
+			// 'username' => 'root',
+			// 'password' => '',
+	// 	),
+	// ),
 );

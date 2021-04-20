@@ -7,6 +7,8 @@ class Model_Entry extends Orm\Model {
 		'date',
 		'weight',
 		'frequency',
-		'total'
+		'total',
+		'notes',
+		'user_id'
 	);
 }
