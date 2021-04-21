@@ -46,18 +46,6 @@ class Controller_Auth extends Controller_Template
 		}
 		if(Input::method() == 'POST') {
 			if($this->login(Input::param('username'), Input::param('password'))) {
-				if (Input::param('remember', false)) {
-					Session::forge(array(
-						'driver' => 'cookie',
-						'cookie' => array(
-							'cookie_name' => 'rmcookie',
-						),
-						'encrypt_cookie' => true,
-						'expire_on_close' => false,
-						'expiration_time' => 86400 * 31,
-					));
-				}
-
 				Session::set_flash('success', Session::get('username').'としてログインしてます。');
 				return Response::redirect('/');
 			} else {
