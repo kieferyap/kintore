@@ -1,6 +1,6 @@
 <div class="container">
 	<div id="input-vue-app">
-	<?= Form::open('/entries/add'); ?>
+	<?= Form::open('https://kintore.kieferyap.com/entries/add'); ?>
 	<div class="row">
 		<div class="col-md-3 col-md-offset-1 input-div exercise-input-div">
 			<div class="form-group">

@@ -1,6 +1,6 @@
 <div class="container">
 
-<?= Form::open('/auth/login'); ?>
+<?= Form::open('https://kintore.kieferyap.com/auth/login'); ?>
 	<?= $form->field('fuel_csrf_token'); ?>
 	<div class="row">
 		<div class="col-md-offset-1 col-md-10 form-group">

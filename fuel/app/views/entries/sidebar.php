@@ -11,7 +11,7 @@
 		</button>
 		<h3 class="modal-title">運動追加</h3>
 	</div>
-	<?= Form::open('/entries/exercise'); ?>
+	<?= Form::open('https://kintore.kieferyap.com/entries/exercise'); ?>
 	<div class="modal-body">
 		<h4><?= Form::label('運動名', 'name'); ?></h4>
 		<?= Form::input('name', '', array(

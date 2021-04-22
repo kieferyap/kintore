@@ -6,12 +6,11 @@
 	<meta name="viewport" content="initial-scale=1">
 	<link rel="manifest" href="/manifest.json"/>
 
-	<?php echo Asset::js(array(
-		'vue.2.6.12.js',
-		'jquery.1.12.4.min.js',
-		'bootstrap.js')); ?>
+	<script type="text/javascript" src="https://kintore.kieferyap.com/assets/js/vue.2.6.12.js"></script>
+	<script type="text/javascript" src="https://kintore.kieferyap.com/assets/js/jquery.1.12.4.min.js"></script>
+	<script type="text/javascript" src="https://kintore.kieferyap.com/assets/js/bootstrap.js"></script>
 
-	<?php echo Asset::css(array('bootstrap.css','kintore.css')); ?>
+	<link type="text/css" rel="stylesheet" href="https://kintore.kieferyap.com/assets/css/bootstrap.css">
 </head>
 <body>
 	<div class="background-image"></div>
@@ -39,12 +38,12 @@
 				<div class="collapse navbar-collapse" id="navbar-login">
 					<? if(Session::get('user_id')): ?>
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href="/auth/logout/">ログアウト(<?= Session::get('username')?>)</a></li>
+						<li><a href="https://kintore.kieferyap.com/auth/logout/">ログアウト(<?= Session::get('username')?>)</a></li>
 					</ul>
 					<? else: ?>
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href="/auth/login">ログイン</a></li>
-						<li><a href="/auth/register">アカウント作成</a></li>
+						<li><a href="https://kintore.kieferyap.com/auth/login">ログイン</a></li>
+						<li><a href="https://kintore.kieferyap.com/auth/register">アカウント作成</a></li>
 					</ul>
 					<? endif; ?>
 				</div>
@@ -85,6 +84,6 @@
 		<?php echo $content; ?>
 	</div>
 	
-	<?php echo Asset::js(array('kintore.js')); ?>
+	<script type="text/javascript" src="https://kintore.kieferyap.com/assets/js/kintore.js"></script>
 </body>
 </html>
