@@ -4,13 +4,14 @@
 <head>
 	<title><?php echo $title; ?></title>
 	<meta name="viewport" content="initial-scale=1">
-	<link rel="manifest" href="/manifest.json"/>
+	<link rel="manifest" href="https://kintore.kieferyap.com/manifest.json"/>
 
-	<script type="text/javascript" src="https://kintore.kieferyap.com/assets/js/vue.2.6.12.js"></script>
+	<script type="text/javascript" src="https://kintore.kieferyap.com/assets/js/vue.min.js"></script>
 	<script type="text/javascript" src="https://kintore.kieferyap.com/assets/js/jquery.1.12.4.min.js"></script>
 	<script type="text/javascript" src="https://kintore.kieferyap.com/assets/js/bootstrap.js"></script>
 
 	<link type="text/css" rel="stylesheet" href="https://kintore.kieferyap.com/assets/css/bootstrap.css">
+	<link type="text/css" rel="stylesheet" href="https://kintore.kieferyap.com/assets/css/kintore.css">
 </head>
 <body>
 	<div class="background-image"></div>
