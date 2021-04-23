@@ -1,11 +1,11 @@
 .background-image {
-	background-image: url('https://kintore.kieferyap.com/assets/img/shark.png');
-	background-color: #FFF;
-    height: 400px;
-    width: 400px;
+    background-image: url(https://kintore.kieferyap.com/assets/img/shark.png);
+    background-color: #FFF;
+    height: 475px;
+    width: 535px;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
     position: fixed;
     right: 0px;
     bottom: -15px;
