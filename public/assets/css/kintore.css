@@ -1,15 +1,13 @@
-.background-image {
-    background-image: url(https://kintore.kieferyap.com/assets/img/shark.png);
-    background-color: #FFF;
-    height: 475px;
-    width: 535px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    position: fixed;
-    right: 0px;
-    bottom: -20px;
+.image-bg {
+	width: 100%;
+}
+
+.div-image-bg {
     z-index: -1;
+    float: left;
+    position: fixed;
+    bottom: -30px;
+    right: -10px;
 }
 
 .kintore-content {
@@ -115,10 +113,10 @@ hr {
 	background-color: black;
 	color: white;
     float: left;
-    margin-left: -15px;
-    margin-top: -15px;
+    margin-left: -16px;
+    margin-top: -16px;
     margin-bottom: -15px;
-    height: 50px;
+    height: 52px;
     width: 30px;
     padding-top: 15px;
     padding-left: 8px;
@@ -149,4 +147,8 @@ hr {
 
 .table-hover > tbody > tr:hover {
 	background-color: rgba(213, 195, 222, 0.2);
+}
+
+.image-404 {
+	width: 100%;
 }

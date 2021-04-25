@@ -121,4 +121,12 @@ class Controller_Entries extends Controller_Template
 		$this->display_index();
 		return;
 	}
+
+	public function action_404() {
+		Session::set_flash('error', '<b>Error 404: </b>ページが見つかりませんでした。');
+		$this->template->title = "Let's 筋トレ!"; 
+		$this->template->is_bg_hidden = true;
+		$this->template->content = View::forge('entries/404');
+		return; 
+	}
 }

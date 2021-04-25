@@ -14,7 +14,15 @@
 	<link type="text/css" rel="stylesheet" href="https://kintore.kieferyap.com/assets/css/kintore.css">
 </head>
 <body>
-	<div class="background-image"></div>
+	<? if(!isset($is_bg_hidden)):?>
+	<div class="container div-image-bg">
+		<div class="row">
+			<div class="col-md-6 col-md-offset-6">
+				<img class="image-bg" src="https://kintore.kieferyap.com/assets/img/shark.png"/>
+			</div>
+		</div>
+	</div>
+	<? endif; ?>
 	<div class="container">
 
 	<nav class="navbar navbar-inverse navbar-purple navbar-fixed-top">
