@@ -3,7 +3,7 @@
     "name": "Let's 筋トレ",
     "short_name": "Let's 筋トレ",
     "description": "筋トレの日記アプリ",
-    "start_url": "http://kintore.kieferyap.com/",
+    "start_url": "/",
     "background_color": "#532c66",
     "theme_color": "#532c66",        
     "orientation": "any",
