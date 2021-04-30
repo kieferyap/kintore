@@ -25,6 +25,9 @@ class Controller_Entries extends Controller_Template
 				return false;
 			}
 		}
+		else {
+			return true;
+		}
 	}
 
 	private function display_index($view=null) {
