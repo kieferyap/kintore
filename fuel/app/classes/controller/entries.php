@@ -65,13 +65,8 @@ class Controller_Entries extends Controller_Template
 			$entry->save();
 			
 			Session::set_flash('success', '記入は完成しました。');
-			$this->display_index();
-			return;
 		}
-		else {
-			$this->display_index();
-			return;
-		}
+		return Response::redirect('/');
 	}
 
 	public function action_delete() {
@@ -118,8 +113,7 @@ class Controller_Entries extends Controller_Template
 
 			Session::set_flash('success', '記入は完成しました。');
 		} 
-		$this->display_index();
-		return;
+		return Response::redirect('/');
 	}
 
 	public function action_404() {
