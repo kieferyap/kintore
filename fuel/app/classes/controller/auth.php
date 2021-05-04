@@ -34,8 +34,20 @@ class Controller_Auth extends Controller_Template
 			return false;
 		}
 
+		// Generate login hash and store it in the DB
+		// TO-DO: Use last_login
+		$login_hash = sha1(Config::get('token_salt').$username);
+		$user->login_hash = $login_hash;
+		$user->save();
+
+		// Login hash in cookie
+		// TO-DO: Change to 30 days
+		Cookie::set('login_hash', $login_hash, 60*60*24*365);
+
 		Session::set('username', $username);
 		Session::set('user_id', $user->id);
+		Session::set('login_hash', $login_hash);
+
 		return $user;
 	}
 

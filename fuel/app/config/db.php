@@ -32,4 +32,3 @@ return array(
 		),
 	),
 );
-mysql://feilq4f9w8x8ymk0:lk2335939nt43sgn@xlf3ljx3beaucz9x.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/oqfc8l6m7ajmxe5m
