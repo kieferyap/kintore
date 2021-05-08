@@ -57,8 +57,8 @@ class Presenter_Entries_Index extends Presenter
 			array_push($entries[$key], array(
 				'id'=>$entry->id,
 				'date_exercise' => $date_exercise,
-				'calculation'=>floatval($entry->weight.$exercises[$entry->exercise_id]['unit']).'x'.$entry->frequency.'回',
-				'total'=>floatval($entry->total.$exercises[$entry->exercise_id]['unit']),
+				'calculation'=>floatval($entry->weight).$exercises[$entry->exercise_id]['unit'].'x'.$entry->frequency.'回',
+				'total'=>floatval($entry->total).$exercises[$entry->exercise_id]['unit'],
 				'notes'=>$entry->notes,
 			));
 		}
