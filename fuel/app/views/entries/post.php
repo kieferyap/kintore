@@ -25,6 +25,7 @@
 				'type' => 'number',
 				'v-model' => 'weight',
 				'class' => 'form-control',
+				'step' => '0.5',
 				'placeholder' => '35',
 				'aria-describedby' => 'basic-addon-weight',
 			)); ?>
