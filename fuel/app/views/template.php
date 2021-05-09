@@ -52,7 +52,7 @@
 					<? else: ?>
 					<ul class="nav navbar-nav navbar-right">
 						<li><a href="https://kintore.kieferyap.com/auth/login">ログイン</a></li>
-						<li><a href="https://kintore.kieferyap.com/auth/register">アカウント作成</a></li>
+						<?/*<li><a href="/auth/register">アカウント作成</a></li>*/?>
 					</ul>
 					<? endif; ?>
 				</div>
