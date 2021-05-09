@@ -81,7 +81,7 @@ class Controller_Auth extends Controller_Template
 		Session::set_flash('success', 'ログアウトしました。');
 		return Response::redirect('auth/login');
 	}
-	<?/*
+	/*
 	public function action_register() {
 		$form = Fieldset::forge('registerform');
 		$form->form()->add_csrf();
@@ -146,5 +146,5 @@ class Controller_Auth extends Controller_Template
 		$this->template->title = "登録- Let's 筋トレ!";
 		$this->template->content = Response::forge($view);
 	}
-	*/?>
+	*/
 }
