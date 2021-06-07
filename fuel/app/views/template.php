@@ -4,21 +4,21 @@
 <head>
 	<title><?php echo $title; ?></title>
 	<meta name="viewport" content="initial-scale=1">
-	<link rel="manifest" href="https://kintore.kieferyap.com/manifest.json"/>
+	<link rel="manifest" href="http://kintore.kieferyap.com/manifest.json"/>
 
-	<script type="text/javascript" src="https://kintore.kieferyap.com/assets/js/vue.min.js"></script>
-	<script type="text/javascript" src="https://kintore.kieferyap.com/assets/js/jquery.1.12.4.min.js"></script>
-	<script type="text/javascript" src="https://kintore.kieferyap.com/assets/js/bootstrap.js"></script>
+	<script type="text/javascript" src="http://kintore.kieferyap.com/assets/js/vue.min.js"></script>
+	<script type="text/javascript" src="http://kintore.kieferyap.com/assets/js/jquery.1.12.4.min.js"></script>
+	<script type="text/javascript" src="http://kintore.kieferyap.com/assets/js/bootstrap.js"></script>
 
-	<link type="text/css" rel="stylesheet" href="https://kintore.kieferyap.com/assets/css/bootstrap.css">
-	<link type="text/css" rel="stylesheet" href="https://kintore.kieferyap.com/assets/css/kintore.css">
+	<link type="text/css" rel="stylesheet" href="http://kintore.kieferyap.com/assets/css/bootstrap.css">
+	<link type="text/css" rel="stylesheet" href="http://kintore.kieferyap.com/assets/css/kintore.css">
 </head>
 <body>
 	<? if(!isset($is_bg_hidden)):?>
 	<div class="container div-image-bg">
 		<div class="row">
 			<div class="col-md-6 col-md-offset-6">
-				<img class="image-bg" src="https://kintore.kieferyap.com/assets/img/shark.png"/>
+				<img class="image-bg" src="http://kintore.kieferyap.com/assets/img/shark.png"/>
 			</div>
 		</div>
 	</div>
@@ -47,7 +47,7 @@
 				<div class="collapse navbar-collapse" id="navbar-login">
 					<? if(Session::get('user_id')): ?>
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href="https://kintore.kieferyap.com/auth/logout/">ログアウト(<?= Session::get('username')?>)</a></li>
+						<li><a href="http://kintore.kieferyap.com/auth/logout/">ログアウト(<?= Session::get('username')?>)</a></li>
 					</ul>
 					<? else: ?>
 					<ul class="nav navbar-nav navbar-right">
@@ -93,6 +93,6 @@
 		<?php echo $content; ?>
 	</div>
 	
-	<script type="text/javascript" src="https://kintore.kieferyap.com/assets/js/kintore.js"></script>
+	<script type="text/javascript" src="http://kintore.kieferyap.com/assets/js/kintore.js"></script>
 </body>
 </html>

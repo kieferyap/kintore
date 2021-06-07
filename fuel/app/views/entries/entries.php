@@ -33,7 +33,7 @@
 					<button type="button" 
 						class="btn btn-danger btn-delete-entry" 
 						data-id="<?= $row['id']?>" 
-						data-url="https://kintore.kieferyap.com/entries/delete/">
+						data-url="http://kintore.kieferyap.com/entries/delete/">
 							<span class="glyphicon glyphicon-trash"></span> 削除
 					</button>
 				</td>

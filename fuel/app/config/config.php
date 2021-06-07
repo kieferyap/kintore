@@ -27,7 +27,7 @@ return array(
 	 *
 	 */
 
-	'base_url' => 'https://kintore.kieferyap.com/',
+	'base_url' => 'http://kintore.kieferyap.com',
 
 	/**
 	 * -------------------------------------------------------------------------
