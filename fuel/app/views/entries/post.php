@@ -1,6 +1,6 @@
 <div class="container">
 	<div id="input-vue-app">
-	<?= Form::open('http://kintore.kieferyap.com/entries/add'); ?>
+	<?= Form::open(Uri::base(false).'entries/add'); ?>
 	<div class="row">
 		<div class="col-md-3 col-md-offset-1 input-div exercise-input-div">
 			<div class="form-group">
@@ -87,7 +87,7 @@
 				name="submit" 
 				id="btn-post-submit"
 				class="btn btn-kintore">
-					<span class="glyphicon glyphicon-plus"></span> 追加
+					<span class="glyphicon glyphicon-plus"></span> 新規作成
 			</button>
 		</div>
 	</div>

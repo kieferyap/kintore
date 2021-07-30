@@ -11,18 +11,24 @@
 			<table class="table table-hover margin-top">
 			<tr>
 				<th class="col-md-2"><?= $date_exercise_name ?></th>
-				<th class="col-md-1">計算</th>
-				<th class="col-md-1">合計</th>
-				<th class="col-md-2">メモ</th>
-				<th class="col-md-2">修正</th>
+				<th>計算</th>
+				<th class="col-md-1 hidden-xs">合計</th>
+				<th class="col-md-2 hidden-xs">備考</th>
+				<th class="col-md-2">操作</th>
 			</tr>
 			<? if(count($rows)): ?>
 			<? foreach($rows as $row): ?>
 			<tr>
 				<td><?= $row['date_exercise']; ?></td>
-				<td><?= $row['calculation']; ?></td>
-				<td><?= $row['total']; ?></td>
 				<td>
+					<?= $row['calculation']; ?>
+					<span class="visible-xs">
+						<b>合計：</b><?= $row['total']; ?><br/>
+						<b>備考：</b><?= $row['notes']; ?>
+					</span>
+				</td>
+				<td class="hidden-xs"><?= $row['total']; ?></td>
+				<td class="hidden-xs">
 				<? if($row['notes']): ?>
 					<?= $row['notes']; ?>
 				<? else: ?>
@@ -31,10 +37,16 @@
 				</td>
 				<td>
 					<button type="button" 
+						class="btn btn-primary btn-repeat-entry" 
+						data-id="<?= $row['id'] ?>" 
+						data-url="<?= Uri::base(false); ?>entries/repeat/">
+							<span class="glyphicon glyphicon-repeat"></span>
+					</button>
+					<button type="button" 
 						class="btn btn-danger btn-delete-entry" 
 						data-id="<?= $row['id']?>" 
-						data-url="http://kintore.kieferyap.com/entries/delete/">
-							<span class="glyphicon glyphicon-trash"></span> 削除
+						data-url="<?= Uri::base(false); ?>entries/delete/">
+							<span class="glyphicon glyphicon-trash"></span>
 					</button>
 				</td>
 			</tr>

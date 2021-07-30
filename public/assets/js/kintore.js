@@ -46,7 +46,7 @@ $(document).ready(function(){
 		var $row = $(this).parent().parent();
 		var id = $(this).data('id');
 
-		$(this).html('読込中...');
+		$(this).html('<span class="glyphicon glyphicon-hourglass"></span>');
 		$(this).attr('disabled', 'true');
 
 		$.ajax({
@@ -56,6 +56,27 @@ $(document).ready(function(){
 			success: function(msg) {
 				console.log(msg);
 				$row.hide(300);
+			},
+			error: function(msg) {
+				console.log(msg);
+			}
+		});
+	});
+
+	$('.btn-repeat-entry').on('click', function() {
+		var $row = $(this).parent().parent();
+		var id = $(this).data('id');
+
+		$(this).html('<span class="glyphicon glyphicon-hourglass"></span>');
+		$(this).attr('disabled', 'true');
+
+		$.ajax({
+			url: $(this).data('url'),
+			method: "POST",
+			data: {'id': id },
+			success: function(msg) {
+				window.location.reload();
+				console.log(msg);
 			},
 			error: function(msg) {
 				console.log(msg);

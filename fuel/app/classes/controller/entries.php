@@ -109,6 +109,31 @@ class Controller_Entries extends Controller_Template
 		die(json_encode(array('is_success' => true)));
 	}
 
+	public function action_repeat() {
+		$id = Input::post('id');
+		if(!$id) {
+			die(json_encode(array('is_success' => false, 'message' => 'No ID given.')));
+		}
+
+		$old_entry = Model_Entry::find($id);
+		if(!$old_entry) {
+			die(json_encode(array('is_success' => false, 'message' => 'ID does not exist.')));
+		}
+		
+		$entry = new Model_Entry();
+		$entry->exercise_id = $old_entry->exercise_id;
+		$entry->date = date("Y-m-d");
+		$entry->weight = $old_entry->weight;
+		$entry->frequency = $old_entry->frequency;
+		$entry->total = $old_entry->total;
+		$entry->notes = $old_entry->notes;
+		$entry->user_id = $old_entry->user_id;
+		$entry->save();
+
+		Session::set_flash('success', '記入は完成しました。');
+		die(json_encode(array('is_success' => true)));
+	}
+
 	public function action_view($id=null) {
 		if($this->check_active_session()) {
 			if(!$id) {
