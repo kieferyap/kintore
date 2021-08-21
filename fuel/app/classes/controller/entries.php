@@ -76,10 +76,14 @@ class Controller_Entries extends Controller_Template
 				}
 
 				$total = $weight*$frequency;
-
+				$date = Input::post('date');
+				if (!$date) {
+					$date = date("Y-m-d");
+				}
+				
 				$entry = new Model_Entry();
 				$entry->exercise_id = Input::post('exercise');
-				$entry->date = date("Y-m-d");
+				$entry->date = $date;
 				$entry->weight = $weight;
 				$entry->frequency = $frequency;
 				$entry->total = $total;
@@ -119,10 +123,15 @@ class Controller_Entries extends Controller_Template
 		if(!$old_entry) {
 			die(json_encode(array('is_success' => false, 'message' => 'ID does not exist.')));
 		}
+
+		$date = Input::post('date');
+		if (!$date) {
+			$date = date("Y-m-d");
+		}
 		
 		$entry = new Model_Entry();
 		$entry->exercise_id = $old_entry->exercise_id;
-		$entry->date = date("Y-m-d");
+		$entry->date = $date;
 		$entry->weight = $old_entry->weight;
 		$entry->frequency = $old_entry->frequency;
 		$entry->total = $old_entry->total;

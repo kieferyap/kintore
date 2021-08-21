@@ -26,6 +26,12 @@ if (navigator.onLine) {
 }
 
 $(document).ready(function(){
+	$('.datepicker').each(function() {
+		$(this).datepicker({
+			dateFormat: "yy-mm-dd"
+		});
+	});
+
 	$(document).on('change', '#id-exercise', function(){
 		var $selectedExercise = $(this).find(':selected');
 		var unit = $selectedExercise.data('unit');
@@ -66,6 +72,7 @@ $(document).ready(function(){
 	$('.btn-repeat-entry').on('click', function() {
 		var $row = $(this).parent().parent();
 		var id = $(this).data('id');
+		var date = $('#form_date').val();
 
 		$(this).html('<span class="glyphicon glyphicon-hourglass"></span>');
 		$(this).attr('disabled', 'true');
@@ -73,7 +80,7 @@ $(document).ready(function(){
 		$.ajax({
 			url: $(this).data('url'),
 			method: "POST",
-			data: {'id': id },
+			data: {'id': id, date: date },
 			success: function(msg) {
 				window.location.reload();
 				console.log(msg);
